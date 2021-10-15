@@ -85,9 +85,8 @@ class MyController extends Controller {
         
          
         DB::table('companies')
-                ->where('id', $request->id)
+                ->where('id', $id)
                 ->delete();
-        
         
          return self::home() ;
     }
