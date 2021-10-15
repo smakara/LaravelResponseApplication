@@ -26,7 +26,14 @@ class MyController extends Controller {
 
         if (sizeof($users) == 1) {
 
-            return view('home');
+            $companies = DB::table('companies')
+                    ->get();
+            $data = Array(
+                "companies" => $companies
+            );
+            
+//            return $data;
+            return view('home', $data);
         } else {
             return view('login');
         }
