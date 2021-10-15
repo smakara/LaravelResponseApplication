@@ -250,65 +250,63 @@
                 <section class="content">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="card">
+                            <!-- left column -->
+                            <div class="col-md-12">
+                                <!-- general form elements -->
+                                <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title">Companies</h3>
+                                        <h3 class="card-title">Edit Company</h3>
                                     </div>
                                     <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <table id="example2" class="table table-bordered table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Website</th>
-                                                    <th>action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    @foreach($companies as $data)
-                                                    <td>{{$data->id}}</td>
-                                                    <td><a href="{{url('/view/company/'.$data->id)}}"> {{$data->Name}}</a></td>
+                                    <!-- form start -->
+                                    <form method="POST" action="{{ url('cupdate') }}">
+                                        @csrf
+                                        <input name="id" type="hidden" value="{{$vcomp->id}}" class="form-control">
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Name</label>
+                                                <input name="name" type="text" class="form-control" value="{{$vcomp->Name}}" placeholder="Enter name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">email</label>
+                                                <input name="email" type="text" class="form-control" value="{{$vcomp->email}}" placeholder="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">website</label>
+                                                <input name="website" type="text" class="form-control" value="{{$vcomp->website}}" placeholder="website">
+                                            </div>
 
-                                                    <td>{{$data->email}}</td>
-                                                    <td> {{$data->website}}</td>
-                                                    <td> <a  class="btn btn-danger btn-sm"  href="{{url('/delete/company/'.$data->id)}}" >
-                                                            <i class="fas fa-trash">
-                                                            </i>
-                                                            Delete
-                                                        </a></td>
-                                                </tr>
-                                                @endforeach
+                                            <div class="form-group">
+                                                <label for="exampleInputFile">Upload Logo</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                    </div>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">Upload</span>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                        </div>
+                                        <!-- /.card-body -->
 
-
-                                            </tbody>
-<!--                                            <tfoot>
-                                                <tr>
-                                                    <th>Rendering engine</th>
-                                                    <th>Browser</th>
-                                                    <th>Platform(s)</th>
-                                                    <th>Engine version</th>
-                                                    <th>CSS grade</th>
-                                                </tr>
-                                            </tfoot>-->
-                                        </table>
-                                    </div>
-                                    <!-- /.card-body -->
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
                                 <!-- /.card -->
 
 
-                                <!-- /.card -->
+
                             </div>
-                            <!-- /.col -->
+                            <!--/.col (left) -->
+
                         </div>
                         <!-- /.row -->
-                    </div>
-                    <!-- /.container-fluid -->
+                    </div><!-- /.container-fluid -->
                 </section>
                 <!-- /.content -->
             </div>

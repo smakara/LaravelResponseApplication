@@ -202,7 +202,7 @@ class DatabaseSeeder extends Seeder {
         ]);
          DB::table('companies')->insert([
             'Name' => "Exxon Mobil",
-            'email' => Str::random(5).,
+            'email' => Str::random(5),
             'logo' => Str::random(4),
             'website' => "Exxon Mobil"
         ]);

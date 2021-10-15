@@ -31,12 +31,65 @@ class MyController extends Controller {
             $data = Array(
                 "companies" => $companies
             );
-            
-//            return $data;
+
             return view('home', $data);
         } else {
             return view('login');
         }
+    }
+
+    public function viewcompany($id) {
+
+        $companies = DB::table('companies')
+                ->where('id', $id)
+                ->first();
+
+
+        $data = Array(
+            "vcomp" => $companies
+        );
+
+        return view('vcomp', $data);
+    }
+
+    public function cupdate(Request $request) {
+
+
+
+        DB::table('companies')
+                ->where('id', $request->id)
+                ->update([
+                    'Name' => $request->name,
+                    'email' => $request->email,
+                    'website' => $request->website
+        ]);
+
+
+       
+        return self::home() ;
+    }
+    
+    function home(){
+        
+         $companies = DB::table('companies')
+                ->get();
+        $data = Array(
+            "companies" => $companies
+        );
+
+        return view('home', $data);
+    }
+    
+    public function deletecompany($id){
+        
+        
+         
+        DB::table('companies')
+                ->where('id', $request->id)
+                ->delete();
+        
+        
+         return self::home() ;
     }
 
 }

@@ -21,7 +21,13 @@ use App\Http\Controllers\MyController;
 
 
 Route::get('/', [MyController::class, 'loginview']);
+Route::get('/view/company/{id}', [MyController::class, 'viewcompany']);
+Route::get('/delete/company/{id}', [MyController::class, 'deletecompany']);
+
 Route::post('/logon', [MyController::class, 'logon'])->name('logon');
+
+
+Route::post('/cupdate', [MyController::class, 'cupdate'])->name('cupdate');
 
 
 //Route::get('/', function () {
