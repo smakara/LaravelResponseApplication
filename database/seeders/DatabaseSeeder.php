@@ -196,7 +196,7 @@ class DatabaseSeeder extends Seeder {
 
         DB::table('companies')->insert([
             'Name' => "Walmart",
-            'email' => Str::random(5),
+            'email' => "admin@walmart.com",
             'logo' => "",
             'website' =>"http://www.stock.walmart.com"
         ]);
