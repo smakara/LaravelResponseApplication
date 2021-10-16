@@ -5,11 +5,10 @@
 
 <p align="center">
   <img src="https://github.com/smakara/LaravelResponseApplication/blob/master/screenshots/Screenshot%202021-10-16%20at%2022.35.26.png" width="350" title="hover text">
-   <img src="https://github.com/smakara/nolik/blob/master/screenshots/3.png" width="350" title="hover text">
-   <img src="https://github.com/smakara/nolik/blob/master/screenshots/5.png" width="350" title="hover text">
-   <img src="https://github.com/smakara/nolik/blob/master/screenshots/7.png" width="350" title="hover text">
-   <img src="https://github.com/smakara/nolik/blob/master/screenshots/9.png" width="350" title="hover text">
-   <img src="https://github.com/smakara/nolik/blob/master/screenshots/11.png" width="350" title="hover text">
+   <img src="https://github.com/smakara/LaravelResponseApplication/blob/master/screenshots/Screenshot%202021-10-16%20at%2022.36.38.png" width="350" title="hover text">
+   <img src="https://github.com/smakara/LaravelResponseApplication/blob/master/screenshots/Screenshot%202021-10-16%20at%2022.37.18.png" width="350" title="hover text">
+   <img src="https://github.com/smakara/LaravelResponseApplication/blob/master/screenshots/Screenshot%202021-10-16%20at%2022.38.21.png" width="350" title="hover text">
+ 
 </p>
 
 
