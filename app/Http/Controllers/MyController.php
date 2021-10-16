@@ -65,13 +65,18 @@ class MyController extends Controller {
         ]);
 
 
-       
-        return self::home() ;
+
+        return self::home();
     }
-    
-    function home(){
-        
-         $companies = DB::table('companies')
+
+    public function newcompany() {
+
+        return view('ncomp');
+    }
+
+    function home() {
+
+        $companies = DB::table('companies')
                 ->get();
         $data = Array(
             "companies" => $companies
@@ -79,16 +84,34 @@ class MyController extends Controller {
 
         return view('home', $data);
     }
-    
-    public function deletecompany($id){
-        
-        
-         
+
+    public function deletecompany($id) {
+
+
+
         DB::table('companies')
                 ->where('id', $id)
                 ->delete();
+
+        return self::home();
+    }
+
+    public function cnew(Request $request) {
+
+        DB::table('companies')
+                ->insert([
+                    'Name' => $request->name,
+                    "email" => $request->email,
+                    "website" => $request->website
+        ]);
+
+        return self::home();
+    }
+    
+    
+    public function employees (){
         
-         return self::home() ;
+        return view ('employees.ehome') ;
     }
 
 }

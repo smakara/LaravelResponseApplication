@@ -19,15 +19,20 @@ use App\Http\Controllers\MyController;
 //});
 
 
-
+Route::get('/new/company', [MyController::class, 'newcompany']);
+Route::get('/home', [MyController::class, 'home']);
 Route::get('/', [MyController::class, 'loginview']);
 Route::get('/view/company/{id}', [MyController::class, 'viewcompany']);
 Route::get('/delete/company/{id}', [MyController::class, 'deletecompany']);
 
+
+Route::get('/employees', [MyController::class, 'employees']);
+
 Route::post('/logon', [MyController::class, 'logon'])->name('logon');
-
-
+Route::post('/cnew', [MyController::class, 'cnew'])->name('cnew');
 Route::post('/cupdate', [MyController::class, 'cupdate'])->name('cupdate');
+
+
 
 
 //Route::get('/', function () {

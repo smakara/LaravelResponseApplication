@@ -255,25 +255,24 @@
                                 <!-- general form elements -->
                                 <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title">Edit Company</h3>
+                                        <h3 class="card-title">New Company</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
-                                    <form method="POST" action="{{ url('cupdate') }}">
+                                    <form method="POST" action="{{ url('cnew') }}">
                                         @csrf
-                                        <input name="id" type="hidden" value="{{$vcomp->id}}" class="form-control">
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Name</label>
-                                                <input name="name" type="text" class="form-control" value="{{$vcomp->Name}}" placeholder="Enter name">
+                                                <input name="name" type="text" class="form-control"  placeholder="Enter name">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">email</label>
-                                                <input name="email" type="text" class="form-control" value="{{$vcomp->email}}" placeholder="email">
+                                                <input name="email" type="text" class="form-control"  placeholder="email">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">website</label>
-                                                <input name="website" type="text" class="form-control" value="{{$vcomp->website}}" placeholder="website">
+                                                <input name="website" type="text" class="form-control"  placeholder="website">
                                             </div>
 
                                             <div class="form-group">
