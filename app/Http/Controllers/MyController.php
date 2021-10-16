@@ -107,11 +107,72 @@ class MyController extends Controller {
 
         return self::home();
     }
-    
-    
-    public function employees (){
-        
-        return view ('employees.ehome') ;
+
+    public function employees() {
+
+        $employees = DB::table('employees')
+                ->get();
+
+        $data = Array(
+            "employees" => $employees
+        );
+
+        return view('employees.ehome', $data);
     }
+
+    public function deleteemployee($id) {
+
+        DB::table('employees')
+                ->where('id', $id)
+                ->delete();
+
+        return self::employees();
+    }
+
+    public function viewemployee($id) {
+
+        $employees = DB::table('employees')
+                ->where('id', $id)
+                ->first();
+
+        $data = Array(
+            "vcomp" => $employees
+        );
+
+        return view('employees.vemployees', $data);
+    }
+
+    public function eupdate(Request $request) {
+
+        DB::table('employees')
+                ->where('id', $request->id)
+                ->update([
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'company' => $request->company,
+                    'email' => $request->email,
+                    'phone_number' => $request->phone_number
+        ]);
+
+        return self::employees();
+    }
+
+    public function newemployee() {
+        
+        return view('employees.nemployees');
+    }
+    
+   public function enew (Request $request){
+       
+        DB::table('employees')
+                ->insert([
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'company' => $request->company,
+                    'email' => $request->email,
+                    'phone_number' => $request->phone_number
+        ]);
+        return self::employees();
+   }
 
 }
